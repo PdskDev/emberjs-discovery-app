@@ -1,0 +1,33 @@
+/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+/* Variables */
+$description-font-weight: bold;
+$title-color: green;
+
+/* CSS blocks */
+#ember-welcome-page-id-selector {
+  h1 {
+    color: $title-color;
+  }
+
+  p {
+    font-weight: $description-font-weight;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.table {
+  width: 90%;
+  margin: auto;
+  border: 1px solid #ddd;
+  margin-top: 30px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 5px;
+}

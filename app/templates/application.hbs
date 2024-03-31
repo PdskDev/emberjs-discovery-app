@@ -1,7 +1,10 @@
 {{page-title "EmberDiscovery"}}
 
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+<h1 class="page-title text-center">Ember Discovery App</h1>
+<div class="text-center">
+  <LinkTo @route="index">Home</LinkTo>
+  <LinkTo @route="about">About</LinkTo>
+  <LinkTo @route="client.index">Clients</LinkTo>
+</div>
 
 {{outlet}}
