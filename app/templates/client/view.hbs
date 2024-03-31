@@ -1,2 +1,21 @@
 {{page-title "View"}}
+{{!-- template-lint-disable table-groups --}}
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <td>{{ @model.name }}</td>
+  </tr>
+  <tr>
+    <th>Company Name</th>
+    <td>{{ @model.company_name }}</td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td>{{ @model.email }}</td>
+  </tr>
+  <tr>
+    <th>Phone Number</th>
+    <td>{{ @model.phone_number }}</td>
+  </tr>
+</table>
 {{outlet}}
