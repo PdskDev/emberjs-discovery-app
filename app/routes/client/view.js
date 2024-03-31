@@ -1,6 +1,17 @@
 import Route from '@ember/routing/route';
+import { service } from '@ember/service';
 
 export default class ClientViewRoute extends Route {
+  @service router;
+
+  beforeModel(transition) {
+    let clientId = transition.to.params.client_id;
+    clientId = parseInt(clientId);
+    if (isNaN(clientId)) {
+      this.router.transitionTo('client');
+    }
+  }
+
   model(params) {
     let clientId = params.client_id;
 
