@@ -4,7 +4,7 @@
 <div class="text-center">
   <LinkTo @route="index">Home</LinkTo>
   <LinkTo @route="about">About</LinkTo>
-  <LinkTo @route="client.index">Clients</LinkTo>
+  <LinkTo @route="client.index" @query={{ hash sortBy="name" order="asc" }}>Clients</LinkTo>
 </div>
 
 {{outlet}}
