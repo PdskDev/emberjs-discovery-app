@@ -1,0 +1,10 @@
+<tr>
+    <td>{{@client.name}}</td>
+    <td>{{@client.company_name}}</td>
+    <td>{{@client.phone_number}}</td>
+    <td>{{@client.email}}</td>
+    <td>
+      <LinkTo @route="client.view" @model="{{@client.id}}">View</LinkTo> | Edit | Delete
+    </td>
+  </tr>
+{{yield}}
