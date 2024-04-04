@@ -20,6 +20,15 @@
   </tr>
   <ClientTable::Row @client={{get @clientsList 1}} class="text-center"/>
   <ClientTable::Row @client={{get @clientsList 2}} class="text-center"/>
+
+  {{#each @clientsList as |client index|}}
+  <ClientTable::Row @client={{client}} class="text-center client-{{index}}"/>
+  {{else}}
+  <tr>
+    <td colspan="5">No clients available</td>
+  </tr>
+  {{/each}}
+
   </tbody>
 </table>
 {{!-- Comment --}}
