@@ -38,7 +38,7 @@ export default class ClientIndexRoute extends Route {
         company_name: 'BCompany',
         email: 'bthedev@bcompany.com',
         phone_number: '+33 2 03 04 05 06',
-        active: true,
+        active: false,
       },
       {
         id: 3,
@@ -50,4 +50,6 @@ export default class ClientIndexRoute extends Route {
       },
     ];
   }
+
+  testCustomHTML = '<p style="font-weight: bold">Test HTML Render</p>';
 }

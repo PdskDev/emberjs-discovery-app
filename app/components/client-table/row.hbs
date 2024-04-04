@@ -1,8 +1,18 @@
-<tr>
-    <td>{{@client.name}}</td>
+<tr class="my-class {{if @client.active 'bg-green' 'bg-gray'}}" ...attributes id="client-{{@client.id}}">
+    <td>
+      {{@client.name}}
+      {{#unless @client.active}}
+      <span>(Inactive)</span>
+      {{/unless}}
+      </td>
     <td>{{@client.company_name}}</td>
-    <td>{{@client.phone_number}}</td>
-    <td>{{@client.email}}</td>
+    {{#if @client.active}}
+      <td>{{@client.phone_number}}</td>
+      <td>{{@client.email}}</td>
+    {{else}}
+      <td>***</td>
+      <td>***</td>
+    {{/if}}
     <td>
       <LinkTo @route="client.view" @model="{{@client.id}}">View</LinkTo> | Edit | Delete
     </td>

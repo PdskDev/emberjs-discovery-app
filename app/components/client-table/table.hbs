@@ -18,8 +18,9 @@
       <LinkTo @route="client.view" @model={{get @clientsList '0.id'}}>View</LinkTo> | Edit | Delete
     </td>
   </tr>
-  <ClientTable::Row @client={{get @clientsList 1}}/>
-  <ClientTable::Row @client={{get @clientsList 2}}/>
+  <ClientTable::Row @client={{get @clientsList 1}} class="text-center"/>
+  <ClientTable::Row @client={{get @clientsList 2}} class="text-center"/>
   </tbody>
 </table>
+{{!-- Comment --}}
 {{yield}}
