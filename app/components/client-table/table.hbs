@@ -1,0 +1,41 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Company Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{get @clientsList '0.name'}}</td>
+    <td>{{get @clientsList '0.company_name'}}</td>
+    <td>{{get @clientsList '0.phone_number'}}</td>
+    <td>{{get @clientsList '0.email'}}</td>
+    <td>
+      <LinkTo @route="client.view" @model={{get @clientsList '0.id'}}>View</LinkTo> | Edit | Delete
+    </td>
+  </tr>
+ <tr>
+    <td>{{get @clientsList '1.name'}}</td>
+    <td>{{get @clientsList '1.company_name'}}</td>
+    <td>{{get @clientsList '1.phone_number'}}</td>
+    <td>{{get @clientsList '1.email'}}</td>
+    <td>
+      <LinkTo @route="client.view" @model={{get @clientsList '1.id'}}>View</LinkTo> | Edit | Delete
+    </td>
+  </tr>
+  <tr>
+    <td>{{get @clientsList '2.name'}}</td>
+    <td>{{get @clientsList '2.company_name'}}</td>
+    <td>{{get @clientsList '2.phone_number'}}</td>
+    <td>{{get @clientsList '2.email'}}</td>
+    <td>
+      <LinkTo @route="client.view" @model={{get @clientsList '2.id'}}>View</LinkTo> | Edit | Delete
+    </td>
+  </tr>
+  </tbody>
+</table>
+{{yield}}
