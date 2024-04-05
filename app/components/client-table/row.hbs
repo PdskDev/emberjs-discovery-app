@@ -1,5 +1,9 @@
 <tr class="my-class {{if @client.active 'bg-green' 'bg-gray'}}" ...attributes id="client-{{@client.id}}">
     <td>
+      {{get-display-name @client}}
+      <br />
+      {{concat (get @client 'name') (get @client 'email')}}
+      <br/>
       {{@client.name}}
       {{#unless @client.active}}
       <span>(Inactive)</span>

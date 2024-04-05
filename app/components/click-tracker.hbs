@@ -1,0 +1,7 @@
+<p class="text-center">Count: {{this.count}}</p>
+<div class="text-center">
+  {{!--<button type="button" {{on "click" this.increaseCount}}>Click</button>--}}
+  <button type="button" {{on "click" (fn this.increaseCount 1)}}>Click by 1</button>
+  <button type="button" {{on "click" (fn this.increaseCount 5)}}>Click by 5</button>
+</div>
+{{yield}}
