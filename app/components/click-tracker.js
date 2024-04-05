@@ -10,4 +10,8 @@ export default class ClickTrackerComponent extends Component {
   increaseCount(addNumber) {
     this.count += addNumber;
   }
+
+  get multipliedByTwo() {
+    return this.count * this.args.multiplier;
+  }
 }
