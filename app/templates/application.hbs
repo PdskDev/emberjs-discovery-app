@@ -1,10 +1,21 @@
 {{page-title "EmberDiscovery"}}
 
 <h1 class="page-title text-center">Ember Discovery App</h1>
-<div class="text-center">
+{{!--<div class="text-center">
   <LinkTo @route="index">Home</LinkTo>
   <LinkTo @route="about">About</LinkTo>
   <LinkTo @route="client.index" @query={{ hash sortBy="name" order="asc" }}>Clients</LinkTo>
-</div>
+</div>--}}
+<BsNav @type="pills" @justified={{false}} @stacked={{false}} @fill={{false}} as |nav|>
+  <nav.item>
+    <nav.link-to @route="index">Home</nav.link-to>
+  </nav.item>
+  <nav.item>
+    <nav.link-to @route="about">About</nav.link-to>
+  </nav.item>
+  <nav.item>
+    <nav.link-to @route="client.index">Clients</nav.link-to>
+  </nav.item>
+</BsNav>
 
 {{outlet}}

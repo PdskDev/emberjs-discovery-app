@@ -6,15 +6,23 @@ module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
     // Add options here
     hinting: false,
+
     fingerprint: {
       enabled: true,
       extensions: ['js', 'css'],
     },
+
     minifyCss: {
       enabled: true,
     },
+
     sassOptions: {
       extension: 'scss',
+    },
+
+    'ember-bootstrap': {
+      bootstrapVersion: 5,
+      importBootstrapCSS: false,
     },
   });
 
