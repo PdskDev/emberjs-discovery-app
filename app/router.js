@@ -12,4 +12,5 @@ Router.map(function () {
     this.route('view', { path: '/:client_id' });
   });
   this.route('fourohfour', { path: '/*' });
+  this.route('login');
 });
