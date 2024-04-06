@@ -1,6 +1,9 @@
 import Route from '@ember/routing/route';
+import { service } from '@ember/service';
 
 export default class ClientIndexRoute extends Route {
+  @service store;
+
   queryParams = ['sortBy', 'order'];
 
   sortBy = null;
@@ -23,32 +26,7 @@ export default class ClientIndexRoute extends Route {
   model(params) {
     console.log(params);
 
-    return [
-      {
-        id: 1,
-        name: 'NadetDev',
-        company_name: 'Dev Co',
-        email: 'nadetdev@devco.com',
-        phone_number: '+33 1 02 03 04 05',
-        active: true,
-      },
-      {
-        id: 2,
-        name: 'B the Dev',
-        company_name: 'BCompany',
-        email: 'bthedev@bcompany.com',
-        phone_number: '+33 2 03 04 05 06',
-        active: false,
-      },
-      {
-        id: 3,
-        name: 'N the DevOps',
-        company_name: 'DeliveryFirst',
-        email: 'nadet@deliveryfirst.com',
-        phone_number: '+33 3 04 05 06 07',
-        active: true,
-      },
-    ];
+    return this.store.findAll('client');
   }
 
   testCustomHTML = '<p style="font-weight: bold">Test HTML Render</p>';
