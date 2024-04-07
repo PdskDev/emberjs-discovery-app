@@ -1,6 +1,5 @@
 import Route from '@ember/routing/route';
 import { service } from '@ember/service';
-import { later } from '@ember/runloop';
 import { action } from '@ember/object';
 
 export default class ClientViewRoute extends Route {
@@ -44,9 +43,5 @@ export default class ClientViewRoute extends Route {
     controller.set('testVar', 'Testing Var');
     // eslint-disable-next-line ember/no-controller-access-in-routes
     this.controllerFor('client').set('clientModuleTitle', model.name);
-  }
-
-  model(params) {
-    return this.store.findAll('client');
   }
 }

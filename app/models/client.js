@@ -1,4 +1,4 @@
-import Model, { attr } from '@ember-data/model';
+import Model, { attr, belongsTo } from '@ember-data/model';
 
 export default class ClientModel extends Model {
   @attr('string') name;
@@ -13,6 +13,9 @@ export default class ClientModel extends Model {
   })
   date;
   @attr('gender') gender;
+  @belongsTo('salesman', { async: true, inverse: 'clients' }) salesman;
+  @belongsTo('salesman', { async: true, inverse: 'backup_salesman' })
+  backup_salesman;
 
   get displayTag() {
     return `${this.name} <${this.email}>`;
