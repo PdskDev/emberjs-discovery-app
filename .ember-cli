@@ -3,5 +3,9 @@
     Setting `isTypeScriptProject` to true will force the blueprint generators to generate TypeScript
     rather than JavaScript by default, when a TypeScript version of a given blueprint is available.
   */
-  "isTypeScriptProject": false
+  "isTypeScriptProject": false,
+  "port":4201,
+  "liveReload": true,
+  "disableAnalytics": false
+
 }

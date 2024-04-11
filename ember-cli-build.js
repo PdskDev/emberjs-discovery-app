@@ -1,6 +1,7 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const stew = require('broccoli-stew');
 
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
@@ -28,5 +29,14 @@ module.exports = function (defaults) {
   });
   app.import('node_modules/bootstrap/dist/css/bootstrap.css');
 
-  return app.toTree();
+  var appTree = app.toTree();
+  var env = EmberApp.env();
+  if (env === 'production') {
+    appTree = stew.rm(appTree, 'robots.txt');
+    appTree = stew.rename(appTree, 'robots-prod.txt', 'robots.txt');
+  } else {
+    appTree = stew.rm(appTree, 'robots-prod.txt');
+  }
+
+  return appTree;
 };
